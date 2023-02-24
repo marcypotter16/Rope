@@ -4,5 +4,6 @@ from States.Title import Title
 g = Game()
 title = Title(g)
 g.state_stack.push(title)
-g.slomo_factor = 0.00000005
+g.settings['fps'] = 60
+g.slomo_factor = 0.1
 g.game_loop()
