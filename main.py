@@ -5,5 +5,5 @@ g = Game()
 title = Title(g)
 g.state_stack.push(title)
 g.settings['fps'] = 60
-g.slomo_factor = 0.1
+g.slomo_factor = 0.00001
 g.game_loop()
