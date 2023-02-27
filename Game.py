@@ -46,7 +46,7 @@ class Game:
         ### --- ###
 
         self.slomo_factor: float = 1.0 # if > 1 game accelerates
-        self.dt, self.prev_time = 0, 0
+        self.dt, self.prev_time = 0, time.time()
         self.now: float = 0
         self.state_stack = Stack()
         self.mousepos = None

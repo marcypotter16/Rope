@@ -27,7 +27,7 @@ class ConstantForce(Force):
 
 class Particle:
     def __init__(self, pos: Vector2, vel: Vector2 = Vector2(0, 0), is_fixed: bool = False, mass: float = 1,
-                 forces: list[Vector2] = [Vector2(0, .01)]):
+                 forces: list[Vector2] = [Vector2(0, 100)]):
         self.is_fixed = is_fixed
         self.forces = forces
         self.prev_pos = pos
@@ -52,7 +52,7 @@ class Particle:
 
 
 class Rope:
-    def __init__(self, game: Game, a: Vector2, b: Vector2, a_fixed=True, b_fixed=True, num_punti: int = 100):
+    def __init__(self, game: Game, a: Vector2, b: Vector2, a_fixed=True, b_fixed=True, num_punti: int = 200):
         self.game = game
         ts = [float(t) / num_punti for t in range(num_punti + 1)]
         self.particles: list[Particle] = []
@@ -62,7 +62,7 @@ class Rope:
         self.b = Particle(b, is_fixed=b_fixed)
         self.particles.append(self.a)
         for t in ts[1:len(ts) - 1]:
-            self.particles.append(Particle(self.a.pos.lerp(self.b.pos, t), mass=2000))
+            self.particles.append(Particle(self.a.pos.lerp(self.b.pos, t), mass=1))
         self.particles.append(self.b)
 
     def _jakobsen_particle_update(self):
