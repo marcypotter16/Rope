@@ -120,6 +120,8 @@ class Rope:
 
     def render(self, surf: Surface):
         pygame.draw.lines(surf, pygame.Color("white"), closed=False, points=[p.pos for p in self.particles], width=3)
+        pygame.draw.circle(surf, pygame.Color("red"), self.a.pos, radius=10)
+        pygame.draw.circle(surf, pygame.Color("cyan"), self.b.pos, radius=10)
 
     def __str__(self):
         return f"Corda:\n{[(p.pos.x, p.pos.y) for p in self.particles]}"
