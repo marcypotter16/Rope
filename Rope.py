@@ -7,7 +7,7 @@ from Game import Game
 
 COEFF = .5  # .55 GIVES A FUNNY EFFECT
 ROPE_ELASTICITY = 0.1  # For now it's no use
-NUM_IT_JAKOBSEN = 40  # Higher = Stiffer rope but also more computational power required (1 is "default")
+NUM_IT_JAKOBSEN = 10  # Higher = Stiffer rope but also more computational power required (1 is "default")
 
 
 def vector_sum(vectors: list[Vector2]):
