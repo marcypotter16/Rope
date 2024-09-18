@@ -12,11 +12,7 @@ class Planet:
         self.acc: Vector2 = Vector2(0, 0)
 
     def update(self, dt):
-        print("DT:", dt)
-        print(self.pos, self.vel, dt * self.vel, self.pos + self.vel * dt)
-        # self.pos += self.vel * .016
         self.pos += self.vel * dt
-        # self.pos = round_vector(self.pos)
         self.vel += self.acc * 0.16
         # Resets the acceleration
         self.acc = Vector2(0, 0)
